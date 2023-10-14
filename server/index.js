@@ -16,9 +16,10 @@ app.use(bodyParser.json())
 //getRouters
 
 const user = require('./routers/userRouter');
+const verify = require('./routers/authverifyRouter')
 
 app.use('/api', user);
-
+app.use('api', verify);
 
 app.listen(port, ()=>{
     console.log(`New app listening on port ${3000}`)
